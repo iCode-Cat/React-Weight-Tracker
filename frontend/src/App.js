@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import axios from 'axios';
+
 
 function App() {
+
+  const save = () => {
+    
+    axios.post('http://localhost:5001', {username:'BOBOv2'})
+    .then((post) => console.log(post))
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={save} >TEST</button>
     </div>
   );
 }
